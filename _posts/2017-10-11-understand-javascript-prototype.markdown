@@ -13,6 +13,7 @@ JavaScript设计之初没有真正的class类，而是使用function当作构造
 class Animal{
     constructor() {}
 }
+
 class Cat extends Animal{
     constructor() {
         super()
@@ -23,8 +24,8 @@ var a = new Animal()
 var c = new Cat();
 {% endhighlight %}
 
-prototype 是类（函数）的方法，存在Animal.prototype, 而没有a.prototype。
-而__proto__是对象的方法， 因为Animal是function，也是一个特殊的对象，所以同时有Animal.__proto__和a.__proto__。
+prototype 是类（函数）的方法，存在Animal.prototype， 而没有a.prototype。
+而__proto__是对象的方法， 因为Animal是function，也是一个特殊的对象，所以同时存在Animal.__proto__和a.__proto__。
 
 记住类，实例对象，原型对象的关系：
 ```
@@ -33,8 +34,8 @@ prototype 是类（函数）的方法，存在Animal.prototype, 而没有a.proto
 ```
 
 如何定义Cat和Animal的继承关系呢？（参考babel ES6转译ES5的实现）
+Cat的原型对象设置为一个构造函数为Cat的Animal实例，并将Cat.__proto__设置为Animal。
 {% highlight ruby %}
-// Cat的原型对象是一个构造函数为Cat的Animal实例
 Cat.prototype = Object.create(Animal.prototype) 
 Cat.prototype.constructor = Cat
 Cat.__proto__ = Animal
@@ -55,8 +56,8 @@ Animal.__proto__ === Function.prototype
 
 
 用大白话讲：
-{% highlight ruby %}
-//Cat,Animal是类，c,a都是实例。
+```
+//Cat，Animal是类，c，a都是实例。
 a.__proto__ === Animal.prototype
 
 //c的原型是Cat.prototype，
@@ -70,7 +71,7 @@ c.__proto__.__proto__.__proto__ === Animal.prototype.__proto__ === Object.protot
 
 // Object.prototype 是一个特殊的对象
 Object.prototype instanceof Object === false
-{% endhighlight %}
+```
 
 原型链关系如下：
 ```

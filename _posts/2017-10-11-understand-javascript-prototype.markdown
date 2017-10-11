@@ -9,7 +9,7 @@ JavaScript设计之初没有真正的class类，而是使用function当作构造
 为了以某种简单的方式来实现类的继承关系，而设计了原型继承的方式。
 
 我们用ES6的语法构建一个Animal类和Cat类。
-{% highlight javascript %}
+{% highlight ruby %}
 class Animal{
     constructor() {}
 }
@@ -33,7 +33,7 @@ prototype 是类（函数）的方法，存在Animal.prototype, 而没有a.proto
 ```
 
 如何定义Cat和Animal的继承关系呢？（参考babel ES6转译ES5的实现）
-{% highlight javascript %}
+{% highlight ruby %}
 // Cat的原型对象是一个构造函数为Cat的Animal实例
 Cat.prototype = Object.create(Animal.prototype) 
 Cat.prototype.constructor = Cat
@@ -41,7 +41,7 @@ Cat.__proto__ = Animal
 {% endhighlight %}
 
 实例对象和类有以下关系：
-{% highlight javascript %}
+{% highlight ruby %}
 Cat.prototype instanceof Cat === false
 Cat.prototype instanceof Animal === true
 Cat.prototype.constructor === Cat
@@ -55,9 +55,9 @@ Animal.__proto__ === Function.prototype
 
 
 用大白话讲：
-{% highlight javascript %}
+{% highlight ruby %}
 //Cat,Animal是类，c,a都是实例。
-a.__proto__ === Animal.prototype。
+a.__proto__ === Animal.prototype
 
 //c的原型是Cat.prototype，
 c.__proto__ === Cat.prototype

@@ -27,7 +27,7 @@ var c = new Cat();
 
 类（函数），实例对象，原型对象的关系：
 prototype 定义的是类（函数）和原型对象的关系，属性的主体是函数，返回值是对象。
-__ __proto__ __ 定义的是对象与原型对象的关系，属性的主体是对象，返回值是对象。
+\_\_proto\_\_ 定义的是对象与原型对象的关系，属性的主体是对象，返回值是对象。
 ```
 Animal.prototype != undefined
 a.prototype === undefined

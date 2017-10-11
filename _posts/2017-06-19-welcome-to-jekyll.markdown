@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to cmm!"
 date:   2017-06-19 15:38:57 +0800
 categories: jekyll update
 ---

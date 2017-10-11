@@ -24,7 +24,7 @@ var c = new Cat();
 {% endhighlight %}
 
 prototype 是类（函数）的方法，存在Animal.prototype, 而没有a.prototype。
-而__proto__是对象的方法， 因为Animal是function，也是一个特殊的对象，所以同时有Animal.__proto__和a.__proto__。
+而__proto__是对象的方法， 因为Animal是function，也是一个特殊的对象，所以同时有 Animal.__proto__ 和 a.__proto__。
 
 记住类，实例对象，原型对象的关系：
 ```

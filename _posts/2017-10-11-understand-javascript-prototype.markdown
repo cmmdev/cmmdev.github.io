@@ -23,14 +23,12 @@ class Cat extends Animal{
 var a = new Animal()
 var c = new Cat();
 {% endhighlight %}
+
+
+实例对象，原型对象的关系：
 ```
 prototype 是类（函数）的方法，存在Animal.prototype， 而没有a.prototype。
 而__proto__是对象的方法， 因为Animal是function，也是一个特殊的对象，所以同时存在Animal.__proto__和a.__proto__。
-```
-
-
-记住类，实例对象，原型对象的关系：
-```
 － prototype 表示函数的原型对象，方法的主体是函数，返回值是对象；定义的是类和原型对象的关系。
 － __proto__ 表示对象的原型对象，方法的主体是对象，返回值是对象，__proto__定义的是对象与原型对象的关系。
 ```

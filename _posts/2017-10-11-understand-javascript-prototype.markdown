@@ -25,12 +25,11 @@ var c = new Cat();
 {% endhighlight %}
 
 
-
-实例对象，原型对象的关系：
-> prototype 表示函数的原型对象，属性的主体是函数，返回值是对象；定义的是类和原型对象的关系。
-prototype 是类（函数）的属性，存在Animal.prototype， 而没有a.prototype。
- __proto__ 表示对象的原型对象，属性的主体是对象，返回值是对象，__proto__定义的是对象与原型对象的关系。
-而__proto__是对象的属性， 因为Animal是function，也是一个特殊的对象，所以同时存在Animal.__proto__和a.__proto__。
+类（函数），实例对象，原型对象的关系：
+> prototype 定义的是类（函数）和原型对象的关系，属性的主体是函数，返回值是对象。
+例如存在Animal.prototype，而没有a.prototype。
+__proto__定义的是对象与原型对象的关系，属性的主体是对象，返回值是对象，
+因为Animal是function，是一个特殊的对象，所以同时存在Animal.__proto__和a.__proto__。
 
 如何定义Cat和Animal的继承关系呢？（参考babel ES6转译ES5的实现）
 Cat的原型对象设置为一个构造函数为Cat的Animal实例，并将Cat.__proto__设置为Animal。

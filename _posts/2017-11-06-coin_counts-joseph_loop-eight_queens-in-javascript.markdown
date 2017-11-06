@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "换硬币／约瑟夫环／八皇后问题的js实现"
+date:   2017-11-06 10:20:00 +0800
+categories: javascript
+---
+
 换硬币方法数：
 ```
 let cost = [0, 1, 5, 10, 50];

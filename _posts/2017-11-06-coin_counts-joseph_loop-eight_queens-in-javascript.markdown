@@ -146,7 +146,6 @@ let combo = (pres, N) => R.map(
 // [[a]] -> a -> [[a]]
 let Q = (acc, k, N) => {
   if (k <= 0) return acc;
-  // [..pre] : [..range(0, k)] | filter(isSafe)
   else return Q(
     R.compose(
       R.filter(isSafe),

@@ -29,6 +29,8 @@ console.log(getKinds(11, 2, [0,0,0,0,0]));
 
 约瑟夫环：
 ```
+const R = require("ramda");
+
 let N = 41;
 let M = 3;
 let K = 1;

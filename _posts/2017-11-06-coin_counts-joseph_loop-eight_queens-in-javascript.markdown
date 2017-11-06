@@ -1,7 +1,5 @@
-
-
-const R = require("ramda");
-
+换硬币方法数：
+```
 let cost = [0, 1, 5, 10, 50];
 // coin counts
 function costAt(acc, index) {
@@ -27,7 +25,10 @@ function getKinds(account, num, acc) {
 }
 
 console.log(getKinds(11, 2, [0,0,0,0,0]));
+```
 
+约瑟夫环：
+```
 let N = 41;
 let M = 3;
 let K = 1;
@@ -43,8 +44,14 @@ function J(n) {
 }
 
 console.log(J(41));
+```
 
+八皇后问题：
+```
 // 8Queens
+
+const R = require("ramda");
+
 // (a, b -> c) -> [a] -> [c]
 let map = R.curry(
   (fn, items) => items.map(fn)
@@ -110,4 +117,4 @@ let result = Q8Answer(8);
 console.log(result);
 console.log(result.length);
 
-
+```

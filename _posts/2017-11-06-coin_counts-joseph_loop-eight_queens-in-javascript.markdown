@@ -131,35 +131,6 @@ update: 八皇后问题（backtrace)
 ```
 const R = require('ramda');
 
-// (a －> b -> c) -> [a] -> [c]
-let map = R.curry(
-  (fn, items) => items.map(fn)
-);
-
-// [a] -> Bool
-let hasSameLength = items =>
-  R.reduce(
-    (acc, item) => acc = acc && (R.length(item) == R.length(R.head(items))),
-    true,
-    R.tail(items)
-  );
-
-// [a] -> Boolean
-let isSafe = arr => {
-  return hasSameLength([
-    R.compose(
-      R.uniq,
-      map((item, index) => item + index)
-    )(arr),
-    R.compose(
-      R.uniq,
-      map((item, index) => item - index)
-    )(arr),
-    R.range(0, arr.length),
-    R.uniq(arr)
-  ]);
-};
-
 // [[[a]]] -> [[a]]
 let flatten = R.reduce(R.concat, []);
 

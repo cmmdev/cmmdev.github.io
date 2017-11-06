@@ -127,3 +127,62 @@ console.log(result);
 console.log(result.length);
 
 ```
+update: 八皇后问题（backtrace)
+```
+const R = require('ramda');
+
+// (a －> b -> c) -> [a] -> [c]
+let map = R.curry(
+  (fn, items) => items.map(fn)
+);
+
+// [a] -> Bool
+let hasSameLength = items =>
+  R.reduce(
+    (acc, item) => acc = acc && (R.length(item) == R.length(R.head(items))),
+    true,
+    R.tail(items)
+  );
+
+// [a] -> Boolean
+let isSafe = arr => {
+  return hasSameLength([
+    R.compose(
+      R.uniq,
+      map((item, index) => item + index)
+    )(arr),
+    R.compose(
+      R.uniq,
+      map((item, index) => item - index)
+    )(arr),
+    R.range(0, arr.length),
+    R.uniq(arr)
+  ]);
+};
+
+// [[[a]]] -> [[a]]
+let flatten = R.reduce(R.concat, []);
+
+// [[a]] -> a -> [[[a]]]
+let combo = (pres, N) => R.map(
+  index => R.map(
+    pre => R.concat(pre, [index]),
+    pres
+  ),
+  R.range(0, N)
+);
+
+// [[a]] -> a -> [[a]]
+let Q = (acc, k, N) => {
+  if (k <= 0) return acc;
+  // [..pre] : [..range(0, k)] | filter(isSafe)
+  else return Q(
+    R.compose(
+      R.filter(isSafe),
+      flatten
+    )(combo(acc, N)), k-1, N);
+}
+
+console.log(Q([[]], 8, 8).length)
+```
+

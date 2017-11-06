@@ -52,7 +52,7 @@ console.log(J(41));
 
 const R = require("ramda");
 
-// (a, b -> c) -> [a] -> [c]
+// (a －> b -> c) -> [a] -> [c]
 let map = R.curry(
   (fn, items) => items.map(fn)
 );

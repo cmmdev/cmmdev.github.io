@@ -14,17 +14,12 @@ function costAt(acc, index) {
   copy[index] ++;
   return copy;
 }
-let index = 1;
 
 function getKinds(account, num, acc) {
   if (account == 0) {
-    console.log('index--' + (index++) );
     console.log(acc);
-
     return 1;
   } else if (account < 0 || num == 0) {
-    // console.log('index--' + (index++) );
-    // console.log(acc);
     return 0;
   } else {
     return getKinds(account, num-1, acc) + getKinds(account-cost[num], num, costAt(acc, num))

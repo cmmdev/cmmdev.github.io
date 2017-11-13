@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "求解逆波兰表达式(Reverse Polish Notation"
+date:   2017-11-06 10:20:00 +0800
+categories: javascript
+---
+
 求解逆波兰表达式
 ```
 const R = require("ramda");

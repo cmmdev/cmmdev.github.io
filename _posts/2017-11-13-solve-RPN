@@ -1,0 +1,27 @@
+求解逆波兰表达式
+```
+const R = require("ramda");
+
+const solveRPN =
+  R.compose(
+    R.head,
+    R.reduce(
+      (acc, item) => {
+        let [x,y,...ys] = acc;
+        if (item == '+') {
+          return R.concat([R.add(x, y)], ys);
+        } else if (item == '-') {
+          return R.concat([R.subtract(x, y)], ys);
+        } else if (item == '*') {
+          return R.concat([R.multiply(x, y)], ys);
+        } else {
+          return R.concat([item], acc);
+        }
+      }, []
+    ),
+    R.split(" ")
+  );
+  
+let log = console.log;
+log(solveRPN("10 4 3 + 2 * -"));
+```

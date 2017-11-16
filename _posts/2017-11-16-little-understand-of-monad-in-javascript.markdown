@@ -18,3 +18,4 @@ bind(m, x=>bind(f(x), g)) === bind(f(unwarp(m)), g)  = g(unwarp ( f(unwarp(m)) )
 
 
 ref:https://curiosity-driven.org/monads-in-javascript#continuation
+ref:https://juejin.im/post/59e55dbbf265da43333d7652

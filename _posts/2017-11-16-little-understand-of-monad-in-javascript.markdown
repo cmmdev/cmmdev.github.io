@@ -23,7 +23,9 @@ bind(m, unit) === unit(unwarp(m)) = m
 bind(bind(m, f), g) === g(unwarp(bind(m, f)) = g(unwarp( f(unwarp(m) )))
 bind(m, x=>bind(f(x), g)) === bind(f(unwarp(m)), g)  = g(unwarp ( f(unwarp(m)) ))
 
-推荐几篇使用javascript介绍monad的文章[monads-in-javascript][ref-1], [JavaScript 让 Monad 更简单（软件编写）][ref-2]
+推荐几篇使用javascript介绍monad的文章:
+[monads-in-javascript][ref-1], 
+[JavaScript 让 Monad 更简单（软件编写）][ref-2]
 
 [ref-1]: https://curiosity-driven.org/monads-in-javascript
 [ref-2]: https://juejin.im/post/59e55dbbf265da43333d7652

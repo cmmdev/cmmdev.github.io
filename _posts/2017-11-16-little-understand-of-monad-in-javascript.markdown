@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "对Monad的一点理解"
-date:   2017-11-06 10:20:00 +0800
+title:  "使用javascript对Monad的一点理解"
+date:   2017-11-16 10:20:00 +0800
 categories: javascript, functional programming
 ---
 

@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "对Monad的一点理解"
+date:   2017-11-06 10:20:00 +0800
+categories: javascript, functional programming
+---
+
 M<T> /// constructor
 
 unit<T>(value: t): M<T>  /// wrapper.

@@ -1,4 +1,9 @@
-
+---
+layout: post
+title:  "学习资料整理"
+date:   2018-03-02 12:00:57 +0800
+categories: material
+---
 ## 机器学习
 
 #### 最优化
